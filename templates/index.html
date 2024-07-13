@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+База данных пользователей
+{% endblock %}
+{% block content%}
+<div class="card text-bg-primary mb-3" style="max-width: 50%;">
+    <div class="card-header text-center"> <p class="h2" style="color: #ffc107;">Простейшая база данных</p></div>
+    <div class="card-body">
+        <img src="{{ url_for('static', filename='img/DB-fon.jpg') }}" class="card-img-top" alt="...">
+    </div>
+{% endblock %}

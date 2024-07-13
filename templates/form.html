@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Форма данных
+{% endblock %}
+{% block content%}
+<form class="row g-3" action="/save_user_date/" method="post">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith%}
+    <div class="col-md-6">
+      <label for="inputEmail" class="form-label">Эл. адрес</label>
+      <input type="email" class="form-control" id="inputEmail" name="mail">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword" class="form-label">Пароль</label>
+      <input type="password" class="form-control" id="inputPassword" name="password" minlength="6">
+    </div>
+    <div class="col-12">
+      <label for="inputname" class="form-label">Имя</label>
+      <input type="text" class="form-control" id="inputname" name="name">
+    </div>
+    <div class="col-12">
+      <label for="inputfname" class="form-label">Фамилия</label>
+      <input type="text" class="form-control"  id="inputfname" name="fname">
+    </div>
+    
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Сохранить данные</button>
+    </div>
+  </form>
+{% endblock %}
